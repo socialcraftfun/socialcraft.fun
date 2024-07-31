@@ -1,0 +1,90 @@
+[data-page^="docs"] {
+
+
+    ul.docs-nav {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        overflow-y: auto;
+        max-height: calc(100vh - var(--headerBarHeight-em) - 6.25rem - 7rem);
+
+        button {
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            color: inherit;
+            line-height: normal;
+            cursor: pointer;
+            padding: 0.125rem 0;
+            margin-bottom: 1rem;
+            transition: all ease 200ms;
+
+            &:hover {
+                color: rgb(var(--colorAccent1) / 1) !important;
+            }
+        }
+
+        a {
+            display: inline-flex;
+            padding: 0.15rem 0.5rem 0.25rem 0.5rem;
+
+            color: rgb(var(--colorText) / 0.75);
+            font-size: var(--fs-5);
+            text-decoration-line: none;
+
+            background-color: var(--bgSurface);
+            border-radius: calc(var(--border-radius) * 1.5);
+            border: 0.075rem solid transparent;
+
+            &:hover {
+                color: rgb(var(--colorText) / 1);
+                border-color: var(--colorBorder);
+                background-color: rgb(var(--colorInvert) / 0.1);
+                transform: translateY(-0.125em);
+            }
+            &:active {
+                transform: translateY(0);
+            }
+        }
+
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            animation-duration: 500ms;
+
+            li {
+                margin-left: 1rem;
+
+                &.item--active {
+                    a {
+                        color: rgb(var(--colorText) / 1);
+                        border-color: rgb(var(--colorAccent1) / 0.65);
+                        background-color: rgb(var(--colorAccent1) / 0.1);
+                        transform: translate(1rem, 0);
+                    }
+                }
+
+                &:last-of-type {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+
+
+    .docs-content {
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+
+            ul.docs-nav {
+                max-height: none;
+            }
+        }
+    }
+}
