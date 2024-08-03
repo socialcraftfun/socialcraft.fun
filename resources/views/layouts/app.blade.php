@@ -11,8 +11,8 @@
                 <a class="navbar-brand" href="/">SocialCraft</a>
 
                 <ul class="navbar-nav">
-                    <li class="nav-item {{ request()->routeIs('about') ? 'nav-item--active' : '' }}">
-                        <a href="/about">О сервере</a>
+                    <li class="nav-item {{ request()->routeIs('donate') ? 'nav-item--active' : '' }}">
+                        <a href="/donate">Донат</a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('stats') ? 'nav-item--active' : '' }}">
                         <a href="/stats">Статистика</a>
