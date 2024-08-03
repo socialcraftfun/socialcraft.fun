@@ -64,7 +64,7 @@ class Docs
             // Abort the request if the page doesn't exist
             abort_if(
                 $raw === null,
-                redirect(status: 300)->route('docs', ['page' => 'intro'])
+                redirect(status: 300)->route('home')
             );
 
             return $raw;
@@ -119,7 +119,7 @@ class Docs
         $data = Cache::remember('doc-file-view-data'.$this->path, now()->addMinutes(30), fn () => collect()->merge($this->variables())->merge([
             'docs'    => $this,
             'content' => $this->content(),
-            '_page' => 'docs'
+            'page' => 'docs'
         ]));
 
         return view($view, $data);
