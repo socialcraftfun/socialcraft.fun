@@ -8,6 +8,8 @@ export default defineConfig({
                 'resources/css/main.scss',
                 'resources/js/app.js',
                 'resources/js/donate.js',
+                'resources/js/leaderboard.js',
+                'resources/js/server_status.js',
             ],
             refresh: [
                 {
@@ -21,9 +23,14 @@ export default defineConfig({
                 }
             ],
             server: {
-                host: 'localhost',
+                host: '127.0.01',
                 port: 8000
             }
         }),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources',
+        },
+    },
 });

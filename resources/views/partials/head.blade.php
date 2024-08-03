@@ -3,12 +3,11 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Site icon -->
-<link rel="shortcut icon" href="/img/sclogo.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
-<meta name="theme-color" content="#ffffff">
-<link rel="manifest" href="/webmanifest.json">
+<link rel="shortcut icon" href="{{ Vite::asset('resources/images/sclogo.png') }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::asset('resources/images/icons/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::asset('resources/images/icons/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::asset('resources/images/icons/favicon-16x16.png') }}">
+<meta name="theme-color" content="#111A1F">
 
 <!-- For Search Indexing -->
 <meta name="robots" content="index, follow">

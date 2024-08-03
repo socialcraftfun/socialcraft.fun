@@ -2,16 +2,30 @@
 
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SupportController;
+use App\Utils\ContentHelper;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\View;
 
-Route::view('/', 'page.home')->name('home');
-Route::view('/about', 'page.home')->name('about');
-Route::view('/stats', 'page.stats')->name('stats');
+Route::view('/', 'page.home', [
+    'online' => ContentHelper::checkServerOnline()
+])->name('home');
 
-// DONATE
+Route::redirect('/about', '/');
+
+Route::view('/stats', 'page.stats', [
+    'title' => 'Статистика игроков',
+    'description' => 'Топ игроков по онлайну'
+])->name('stats');
+
+
+/*
+|--------------------------------------------------------------------------
+| DONATE
+|--------------------------------------------------------------------------
+|
+*/
 
 Route::view('/donate', 'page.donate', [
     'page' => 'donate',
@@ -21,11 +35,19 @@ Route::view('/donate', 'page.donate', [
 )->name('donate');
 Route::view('/donate/success', 'page.donate-success')->name('donate.success');
 
+/*
+|--------------------------------------------------------------------------
+| DOCS \ rules
+|--------------------------------------------------------------------------
+|
+*/
+
+
 //Route::get('/rules', [DocsController::class, 'show'])
 //    ->name('rules');
 
-
 Route::redirect('/rules', '/docs/rules', 301);
+
 Route::get('/docs/{page?}', [DocsController::class, 'show'])
     ->name('docs');
 

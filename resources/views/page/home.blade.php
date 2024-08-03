@@ -14,9 +14,8 @@
         </div>
 
         <div class="home-featured-image">
-            <img src="/img/featured.png" alt="SocialCraft">
+            <img src="{{ Vite::asset('resources/images/featured.png') }}" alt="SocialCraft">
         </div>
-
     </div>
 </div>
 
