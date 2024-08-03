@@ -76,7 +76,7 @@
 
             <ul class="online-stats">
                 <li>
-                    <div class="number">50</div>
+                    <div class="number">{{ $online }}</div>
                     <div>Онлайн</div>
                 </li>
             </ul>
@@ -97,5 +97,5 @@
 @endsection
 
 @push('foot')
-    <script src="{{ mix('assets/server_status.js') }}"></script>
+    <script src="@vite('resources/js/server_status.js')"></script>
 @endpush

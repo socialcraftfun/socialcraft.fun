@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use function Laravel\Prompts\select;
 
-class PlayerController extends Controller
+class LeaderboardController extends Controller
 {
     public function index()
     {
@@ -13,7 +13,7 @@ class PlayerController extends Controller
 //        return response()
 //            ->json($players);
 
-        $data = DB::select('SELECT * FROM `user_leaderboard` ORDER BY played_minutes DESC LIMIT 10');
+        $data = DB::select('SELECT * FROM `user_leaderboard` ORDER BY played_minutes DESC LIMIT 100');
         $players = [
             'data' => $data
         ];

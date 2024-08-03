@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\ServerStatusController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/players', [PlayerController::class, 'index']);
+Route::get('/players', [LeaderboardController::class, 'index']);
 Route::get('/online', [ServerStatusController::class, 'index']);
 
 Route::post('/payment/purchase', [CheckoutController::class, 'checkout']);
