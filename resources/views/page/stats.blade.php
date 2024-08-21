@@ -36,5 +36,5 @@
 @endsection
 
 @push('foot')
-    <script src="{{ Vite::asset('resources/js/leaderboard.js') }}"></script>
+    @vite('resources/js/leaderboard.js');
 @endpush

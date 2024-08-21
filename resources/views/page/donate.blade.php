@@ -36,8 +36,8 @@
 
         </div>
     </x-container>
-
-    @push('foot')
-        <script src="{{ Vite::asset('resources/js/donate.js') }}"></script>
-    @endpush
 @endsection
+
+@push('foot')
+    @vite('resources/js/donate.js');
+@endpush
